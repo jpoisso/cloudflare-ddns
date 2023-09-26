@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-release-rust:
     runs-on: self-hosted
     steps:
       - name: Checkout
