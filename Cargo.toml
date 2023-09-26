@@ -13,7 +13,7 @@ cloudflare = { version = "0.10.1" , features = ["rustls-tls"], default-features=
 reqwest = { version = "0.11.20", features = ["rustls-tls", "json", "blocking"], default-features=false }
 rustls = "0.21.7"
 rustls-pemfile = "1.0.0"
-webpki-roots = "0.25.0"
+webpki-roots = "0.25.2"
 
 [profile.release]
 lto = true
