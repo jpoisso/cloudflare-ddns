@@ -1,5 +1,8 @@
 # Cloudflare DDNS
 
+[![Lint, Format and Build](https://github.com/jpoisso/cloudflare-ddns/actions/workflows/pr.yaml/badge.svg?branch=main)](https://github.com/jpoisso/cloudflare-ddns/actions/workflows/pr.yaml)
+[![Build and Dockerize](https://github.com/jpoisso/cloudflare-ddns/actions/workflows/ci.yaml/badge.svg)](https://github.com/jpoisso/cloudflare-ddns/actions/workflows/ci.yaml)
+
 This application can be used to periodically check for IP changes and update Cloudflare DNS records accordingly.
 
 ## Configuration
