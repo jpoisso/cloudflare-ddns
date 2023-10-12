@@ -9,7 +9,7 @@ dotenv = "0.15.0"
 log = "0.4.20"
 env_logger = "0.10.0"
 anyhow = "1.0.75"
-cloudflare = { version = "0.11.0" , features = ["rustls-tls"], default-features=false }
+cloudflare = { version = "0.11.0" , features = ["rustls-tls", "blocking"], default-features=false }
 reqwest = { version = "0.11.22", features = ["rustls-tls", "json", "blocking"], default-features=false }
 rustls = "0.21.7"
 rustls-pemfile = "1.0.3"
