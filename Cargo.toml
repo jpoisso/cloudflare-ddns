@@ -6,7 +6,7 @@ authors = ["Jonathan Poisson"]
 
 [dependencies]
 dotenv = "0.15.0"
-log = "0.4.20"
+log = "0.4.21"
 env_logger = "0.11.2"
 anyhow = "1.0.80"
 cloudflare = { version = "0.11.0" , features = ["rustls-tls", "blocking"], default-features=false }
