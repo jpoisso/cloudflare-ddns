@@ -280,7 +280,7 @@ dependencies = [
  "env_logger",
  "log",
  "reqwest",
- "rustls 0.23.0",
+ "rustls 0.23.1",
  "rustls-pemfile 2.1.0",
  "webpki-roots 0.26.1",
 ]
@@ -1048,9 +1048,9 @@ dependencies = [
 
 [[package]]
 name = "rustls"
-version = "0.23.0"
+version = "0.23.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "53e56521f047352df0db9a3c5aafc573eeb8909ab80f9d4cba201d8d73539009"
+checksum = "e153fc89608e0515660ca656fd7f2fa05ca6690f3fd6ad1b0a46e24a8130d838"
 dependencies = [
  "aws-lc-rs",
  "log",
