@@ -1,6 +1,6 @@
-
-
-use cloudflare::endpoints::dns::dns::{DnsContent, ListDnsRecords, ListDnsRecordsParams, UpdateDnsRecord, UpdateDnsRecordParams};
+use cloudflare::endpoints::dns::dns::{
+    DnsContent, ListDnsRecords, ListDnsRecordsParams, UpdateDnsRecord, UpdateDnsRecordParams,
+};
 use cloudflare::framework::auth::Credentials;
 use cloudflare::framework::client::blocking_api::HttpApiClient;
 use cloudflare::framework::client::ClientConfig;
@@ -10,7 +10,6 @@ use std::env;
 use std::net::Ipv4Addr;
 
 fn main() -> anyhow::Result<()> {
-    
     // Load environment variables.
     dotenv().ok();
 
