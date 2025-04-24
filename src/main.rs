@@ -1,23 +1,27 @@
-use cloudflare::endpoints::dns::{
-    DnsContent, ListDnsRecords, ListDnsRecordsParams, UpdateDnsRecord, UpdateDnsRecordParams,
-};
 
+
+use cloudflare::endpoints::dns::dns::{DnsContent, ListDnsRecords, ListDnsRecordsParams, UpdateDnsRecord, UpdateDnsRecordParams};
 use cloudflare::framework::auth::Credentials;
-use cloudflare::framework::{Environment, HttpApiClient, HttpApiClientConfig, OrderDirection};
-use dotenv::dotenv;
+use cloudflare::framework::client::blocking_api::HttpApiClient;
+use cloudflare::framework::client::ClientConfig;
+use cloudflare::framework::{Environment, OrderDirection};
+use dotenvy::dotenv;
+use std::env;
 use std::net::Ipv4Addr;
 
 fn main() -> anyhow::Result<()> {
+    
     // Load environment variables.
     dotenv().ok();
+
     // Init logger
     env_logger::init();
 
     // Read relevant environment variables.
     let (email, key, zone) = (
-        dotenv::var("CLOUDFLARE_EMAIL")?,
-        dotenv::var("CLOUDFLARE_API_KEY")?,
-        dotenv::var("CLOUDFLARE_ZONE")?,
+        env::var("CLOUDFLARE_EMAIL")?,
+        env::var("CLOUDFLARE_API_KEY")?,
+        env::var("CLOUDFLARE_ZONE")?,
     );
 
     // Obtain public Ipv4 address
@@ -33,7 +37,7 @@ fn main() -> anyhow::Result<()> {
             email: email.to_string(),
             key: key.to_string(),
         },
-        HttpApiClientConfig::default(),
+        ClientConfig::default(),
         Environment::Production,
     )?;
 
@@ -55,7 +59,7 @@ fn main() -> anyhow::Result<()> {
         .iter()
         .filter(|record| {
             if let DnsContent::A { content } = &record.content {
-                !record.locked && *content != ipv4
+                *content != ipv4
             } else {
                 false
             }

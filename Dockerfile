@@ -1,5 +1,5 @@
 ##### Builder
-FROM rust:alpine3.18 as builder
+FROM rust:alpine AS builder
 
 # Create fresh workspace
 WORKDIR /usr/src
