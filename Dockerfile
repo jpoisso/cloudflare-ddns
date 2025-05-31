@@ -18,7 +18,7 @@ RUN touch /usr/src/cloudflare-ddns/src/main.rs
 RUN cargo build --target x86_64-unknown-linux-musl --release
 
 ##### Runtime
-FROM alpine:3.21.3 AS runtime
+FROM alpine:3.22.0 AS runtime
 
 # Copy generated binary in runtime
 COPY --from=builder /usr/src/cloudflare-ddns/target/x86_64-unknown-linux-musl/release/cloudflare-ddns /usr/local/bin
