@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "prHourlyLimit": 1,
   "automergeType": "pr",
